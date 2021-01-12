@@ -1,0 +1,17 @@
+{% extends 'main/base_main.html' %}
+
+
+
+
+{% block content %}
+    
+    {% for fat in fats %}
+        <p>
+            {{ fat.date_pub }} - {{ fat.fat }} - {{ fat.samples }}
+        </p>
+
+    {% endfor %}
+        
+    
+{% endblock content %}
+    

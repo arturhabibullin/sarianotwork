@@ -1,20 +1,31 @@
 {% extends 'main/base_main.html' %}
 
 {% block title  %}
-    Hello
+    Hello - {{ block.super }}
 {% endblock title  %}
     
 
 {% block content %}
-  <div class="container">
-      <div class="row">
-          <div class="col">
-              there is
-          </div>
-          <div class="col">
-              nothing
-          </div>
-      </div>
-  </div>
-{% endblock content %}
     
+    {% for sample in samples %}
+        <div class="card text-center">
+            <div class="card-header">
+            {{ sample.sample_id }}
+            </div>
+            <div class="card-body">
+            <h5 class="card-title">
+                {{sample.date_production }}
+                {{ sample.bb_for_i }} - {{ sample.bb_and_for }}
+                {{ sample.pallet_for_i }} - {{ sample.pallet_and_for }}
+            </h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+            <div class="card-footer text-muted">
+            2 days ago
+            </div>
+        </div>
+    {% endfor %}
+        
+{% endblock content %}
+  
